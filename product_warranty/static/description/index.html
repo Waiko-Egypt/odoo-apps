@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<title>Product Warranty Management - Odoo</title>
+<style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+        font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+        color: #2c3e50;
+        line-height: 1.6;
+        background: #f7f9fc;
+    }
+    .wrap { max-width: 1200px; margin: 0 auto; background:#fff; }
+
+    /* Banner */
+    .banner {
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(135deg,#4b2e83 0%, #7d3cff 100%);
+    }
+    .banner img { width: 100%; display: block; }
+
+    /* Hero title bar */
+    .hero {
+        background: linear-gradient(135deg,#4b2e83 0%, #7d3cff 100%);
+        color:#fff;
+        padding: 45px 40px;
+        text-align:center;
+    }
+    .hero h1 {
+        font-size: 42px;
+        font-weight: 700;
+        margin-bottom: 10px;
+        letter-spacing: -0.5px;
+    }
+    .hero p {
+        font-size: 18px;
+        opacity: 0.95;
+        max-width: 780px;
+        margin: 0 auto;
+    }
+    .badges { margin-top: 22px; }
+    .badge {
+        display:inline-block;
+        background: rgba(255,255,255,0.18);
+        border: 1px solid rgba(255,255,255,0.35);
+        color:#fff;
+        padding: 6px 14px;
+        border-radius: 20px;
+        font-size: 13px;
+        margin: 4px;
+        font-weight: 500;
+    }
+
+    /* Sections */
+    section { padding: 55px 50px; }
+    .section-title {
+        text-align:center;
+        margin-bottom: 40px;
+    }
+    .section-title h2 {
+        font-size: 32px;
+        color:#4b2e83;
+        margin-bottom:10px;
+        position:relative;
+        display:inline-block;
+    }
+    .section-title h2:after {
+        content:"";
+        position:absolute;
+        left:50%;
+        bottom:-10px;
+        width:60px;
+        height:3px;
+        background: #7d3cff;
+        transform: translateX(-50%);
+        border-radius:2px;
+    }
+    .section-title p {
+        color:#666;
+        font-size: 16px;
+        margin-top:18px;
+    }
+
+    /* Overview */
+    .overview { background: #fafbff; }
+    .overview-grid {
+        display:grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 22px;
+    }
+    .overview-card {
+        background: #fff;
+        border-radius: 12px;
+        padding: 28px 22px;
+        text-align:center;
+        border-top: 4px solid #7d3cff;
+        box-shadow: 0 4px 18px rgba(75,46,131,0.06);
+        transition: transform .25s ease, box-shadow .25s ease;
+    }
+    .overview-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 30px rgba(75,46,131,0.12);
+    }
+    .overview-card .num {
+        font-size: 38px;
+        font-weight: 800;
+        color:#7d3cff;
+        display:block;
+        margin-bottom: 6px;
+    }
+    .overview-card h4 { font-size:16px; color:#4b2e83; margin-bottom: 8px; }
+    .overview-card p { font-size: 14px; color:#666; }
+
+    /* Features */
+    .features-grid {
+        display:grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+    .feature {
+        display:flex;
+        gap: 18px;
+        background:#fff;
+        border: 1px solid #eee;
+        border-radius: 12px;
+        padding: 24px;
+        transition: all .25s ease;
+    }
+    .feature:hover {
+        border-color: #7d3cff;
+        box-shadow: 0 8px 22px rgba(125,60,255,0.10);
+    }
+    .feature .icon {
+        flex-shrink:0;
+        width: 52px;
+        height: 52px;
+        background: linear-gradient(135deg,#4b2e83,#7d3cff);
+        border-radius: 12px;
+        color:#fff;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        font-size: 22px;
+        font-weight:bold;
+    }
+    .feature h3 { font-size: 17px; color: #4b2e83; margin-bottom: 6px; }
+    .feature p { font-size: 14px; color:#555; }
+
+    /* Steps */
+    .usage { background: #fafbff; }
+    .steps {
+        display:grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+    .step {
+        background:#fff;
+        border-radius: 12px;
+        padding: 26px 20px;
+        text-align:center;
+        border: 1px solid #eee;
+    }
+    .step .step-num {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        background: linear-gradient(135deg,#4b2e83,#7d3cff);
+        color:#fff;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        font-weight:700;
+        font-size:18px;
+        margin: 0 auto 14px;
+    }
+    .step h4 { color:#4b2e83; font-size: 15px; margin-bottom: 6px; }
+    .step p { font-size: 13px; color:#666; }
+
+    /* Highlights */
+    .highlight-box {
+        background: linear-gradient(135deg,#4b2e83 0%, #7d3cff 100%);
+        color:#fff;
+        padding: 40px;
+        border-radius: 16px;
+        display:grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        text-align:center;
+    }
+    .highlight-box .item strong {
+        display:block;
+        font-size: 30px;
+        margin-bottom: 6px;
+    }
+    .highlight-box .item span { font-size: 13px; opacity:0.9; }
+
+    /* Code mock */
+    .code-mock {
+        background:#1e1e2f;
+        color:#e0e0e0;
+        border-radius: 10px;
+        padding: 22px 26px;
+        font-family: 'Consolas','Courier New', monospace;
+        font-size: 13px;
+        line-height:1.75;
+        overflow:auto;
+    }
+    .code-mock .k { color:#c792ea; }
+    .code-mock .s { color:#c3e88d; }
+    .code-mock .n { color:#82aaff; }
+    .code-mock .c { color:#676e95; font-style: italic; }
+
+    /* Compatibility */
+    .compat { background:#fafbff; }
+    .compat-list {
+        display:grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+    }
+    .compat-item {
+        background:#fff;
+        border:1px solid #eee;
+        border-radius: 10px;
+        padding: 18px;
+        text-align:center;
+        font-weight: 600;
+        color:#4b2e83;
+    }
+    .compat-item .tick { color:#7d3cff; font-size: 22px; display:block; margin-bottom: 4px; }
+
+    /* Developer */
+    .dev-card {
+        background: linear-gradient(135deg,#f5f0ff 0%, #ffffff 100%);
+        border-radius: 16px;
+        padding: 40px;
+        display:flex;
+        align-items:center;
+        gap: 30px;
+        border: 1px solid #ece3ff;
+    }
+    .dev-card img {
+        width: 140px;
+        height: 140px;
+        border-radius: 20px;
+        background:#fff;
+        padding: 10px;
+        box-shadow: 0 8px 24px rgba(75,46,131,0.15);
+        object-fit: contain;
+    }
+    .dev-info h3 { font-size: 24px; color:#4b2e83; margin-bottom: 8px; }
+    .dev-info p { color:#555; font-size: 15px; margin-bottom:4px; }
+    .dev-info a { color:#7d3cff; text-decoration:none; font-weight: 600; }
+    .dev-info a:hover { text-decoration:underline; }
+
+    /* Footer */
+    footer {
+        background: #2c1a54;
+        color:#fff;
+        text-align:center;
+        padding: 30px;
+        font-size: 14px;
+    }
+    footer a { color:#c4a8ff; text-decoration:none; }
+
+    @media (max-width: 900px) {
+        .overview-grid,.features-grid,.steps,.highlight-box,.compat-list {
+            grid-template-columns: 1fr 1fr;
+        }
+        .hero h1 { font-size: 30px; }
+        .dev-card { flex-direction:column; text-align:center; }
+    }
+    @media (max-width: 560px) {
+        .overview-grid,.features-grid,.steps,.highlight-box,.compat-list {
+            grid-template-columns: 1fr;
+        }
+        section { padding: 40px 20px; }
+    }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+    <!-- Banner -->
+    <div class="banner">
+        <img src="banner.png" alt="Product Warranty Management"/>
+    </div>
+
+    <!-- Hero -->
+    <div class="hero">
+        <h1>Product Warranty Management</h1>
+        <p>Add warranty periods to your products and automatically track start &amp; end dates on Sales, Invoices, and POS &mdash; fully integrated with Odoo.</p>
+        <div class="badges">
+            <span class="badge">Community &amp; Enterprise</span>
+            <span class="badge">LGPL-3 License</span>
+            <span class="badge">Sales / Invoicing / POS</span>
+            <span class="badge">Multi-language Ready</span>
+        </div>
+    </div>
+
+    <!-- Overview -->
+    <section class="overview">
+        <div class="section-title">
+            <h2>Why This Module?</h2>
+            <p>A complete warranty management solution &mdash; from product configuration to printed invoice reports.</p>
+        </div>
+        <div class="overview-grid">
+            <div class="overview-card">
+                <span class="num">01</span>
+                <h4>Per-Product Warranty</h4>
+                <p>Define a warranty duration on every product with just two clicks.</p>
+            </div>
+            <div class="overview-card">
+                <span class="num">02</span>
+                <h4>Automatic Dates</h4>
+                <p>Warranty start / end dates are auto-calculated when the invoice is posted.</p>
+            </div>
+            <div class="overview-card">
+                <span class="num">03</span>
+                <h4>Printed on Reports</h4>
+                <p>Warranty details appear on Sale Order, Invoice, and POS printed reports.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Features -->
+    <section>
+        <div class="section-title">
+            <h2>Key Features</h2>
+            <p>Everything you need to manage warranty across the sales cycle.</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature">
+                <div class="icon">1</div>
+                <div>
+                    <h3>New Warranty Tab on Product Form</h3>
+                    <p>A dedicated <b>Warranty</b> tab is added to the product page. Configure duration and period type per product.</p>
+                </div>
+            </div>
+            <div class="feature">
+                <div class="icon">2</div>
+                <div>
+                    <h3>Monthly or Yearly Periods</h3>
+                    <p>Choose between <b>Months</b> or <b>Years</b> with a single selection &mdash; no manual calculations required.</p>
+                </div>
+            </div>
+            <div class="feature">
+                <div class="icon">3</div>
+                <div>
+                    <h3>Auto-Calculated Start &amp; End Dates</h3>
+                    <p>Warranty starts on invoice validation date and ends after the configured duration &mdash; computed automatically.</p>
+                </div>
+            </div>
+            <div class="feature">
+                <div class="icon">4</div>
+                <div>
+                    <h3>Visible in Sale Order Lines</h3>
+                    <p>Warranty column shows up on Sale Order lines so your team knows exactly what's covered before the sale.</p>
+                </div>
+            </div>
+            <div class="feature">
+                <div class="icon">5</div>
+                <div>
+                    <h3>Full Invoice Integration</h3>
+                    <p>Invoice lines display warranty duration plus Start / End dates, and print them on the customer invoice.</p>
+                </div>
+            </div>
+            <div class="feature">
+                <div class="icon">6</div>
+                <div>
+                    <h3>Point of Sale Support</h3>
+                    <p>POS orders that generate invoices automatically populate warranty dates on the resulting invoice lines.</p>
+                </div>
+            </div>
+            <div class="feature">
+                <div class="icon">7</div>
+                <div>
+                    <h3>Clean PDF Reports</h3>
+                    <p>Customized Sales &amp; Invoice templates with dedicated warranty column and styled SCSS layout.</p>
+                </div>
+            </div>
+            <div class="feature">
+                <div class="icon">8</div>
+                <div>
+                    <h3>Zero Configuration</h3>
+                    <p>Install and use immediately &mdash; no setup required, no wizards, no complex permissions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Usage flow -->
+    <section class="usage">
+        <div class="section-title">
+            <h2>How It Works</h2>
+            <p>A simple four-step workflow &mdash; from product setup to printed invoice.</p>
+        </div>
+        <div class="steps">
+            <div class="step">
+                <div class="step-num">1</div>
+                <h4>Configure Product</h4>
+                <p>Open a product and set its warranty duration &amp; period type in the Warranty tab.</p>
+            </div>
+            <div class="step">
+                <div class="step-num">2</div>
+                <h4>Create Sale Order</h4>
+                <p>The warranty column shows up automatically on order lines.</p>
+            </div>
+            <div class="step">
+                <div class="step-num">3</div>
+                <h4>Validate Invoice</h4>
+                <p>Start &amp; end dates are auto-filled the moment the invoice is posted.</p>
+            </div>
+            <div class="step">
+                <div class="step-num">4</div>
+                <h4>Print &amp; Deliver</h4>
+                <p>Print the invoice &mdash; warranty details are already on the PDF.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Highlights -->
+    <section>
+        <div class="section-title">
+            <h2>At a Glance</h2>
+        </div>
+        <div class="highlight-box">
+            <div class="item"><strong>3</strong><span>Odoo Apps Integrated</span></div>
+            <div class="item"><strong>2</strong><span>Period Types Supported</span></div>
+            <div class="item"><strong>100%</strong><span>Automatic Calculation</span></div>
+            <div class="item"><strong>0</strong><span>Manual Steps Required</span></div>
+        </div>
+    </section>
+
+    <!-- Technical -->
+    <section class="usage">
+        <div class="section-title">
+            <h2>Technical Highlights</h2>
+            <p>Clean architecture, extendable models, standard Odoo inheritance.</p>
+        </div>
+        <div class="code-mock">
+<span class="c"># Extend product.template with warranty fields</span><br/>
+<span class="k">class</span> <span class="n">ProductTemplate</span>(models.Model):<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">_inherit</span> = <span class="s">"product.template"</span><br/><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">warranty_duration</span> = fields.Integer(<span class="s">"Warranty Duration"</span>)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">warranty_period_type</span> = fields.Selection([<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="s">"months"</span>, <span class="s">"Months"</span>),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="s">"years"</span>, <span class="s">"Years"</span>),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;])<br/><br/>
+<span class="c"># Auto-calculate warranty dates on invoice post</span><br/>
+<span class="n">line.warranty_start_date</span> = confirmation_date<br/>
+<span class="n">line.warranty_end_date</span> = confirmation_date + relativedelta(months=duration)
+        </div>
+    </section>
+
+    <!-- Compatibility -->
+    <section class="compat">
+        <div class="section-title">
+            <h2>Compatibility</h2>
+            <p>Works out-of-the-box with core Odoo modules.</p>
+        </div>
+        <div class="compat-list">
+            <div class="compat-item"><span class="tick">&#10003;</span>Product</div>
+            <div class="compat-item"><span class="tick">&#10003;</span>Sales</div>
+            <div class="compat-item"><span class="tick">&#10003;</span>Invoicing</div>
+            <div class="compat-item"><span class="tick">&#10003;</span>Point of Sale</div>
+        </div>
+    </section>
+
+    <!-- Developer -->
+    <section>
+        <div class="section-title">
+            <h2>About the Developer</h2>
+        </div>
+        <div class="dev-card">
+            <img src="developer-logo.png" alt="Developer Logo"/>
+            <div class="dev-info">
+                <h3>Eng. Mohamed Wally</h3>
+                <p><b>Senior Odoo Developer</b> &mdash; Building professional Odoo modules that solve real business problems.</p>
+                <p>Website: <a href="https://mohamed-wally.com" target="_blank">mohamed-wally.com</a></p>
+                <p>License: <b>LGPL-3</b> &nbsp;|&nbsp; Category: <b>Sales</b></p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2026 Eng. Mohamed Wally &mdash; Product Warranty Management for Odoo.<br/>
+        Visit <a href="https://mohamed-wally.com" target="_blank">mohamed-wally.com</a> for more Odoo apps &amp; custom development.
+    </footer>
+
+</div>
+</body>
+</html>
