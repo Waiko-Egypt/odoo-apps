@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Account Move Form View - Add Warranty Fields to Invoice Lines -->
+    <record id="account_move_form_view_warranty" model="ir.ui.view">
+        <field name="name">account.move.form.warranty</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='invoice_line_ids']/list//field[@name='quantity']" position="before">
+                <field name="warranty_description" string="Warranty" optional="show"/>
+                <field name="warranty_start_date" optional="show"/>
+                <field name="warranty_end_date" optional="show"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
