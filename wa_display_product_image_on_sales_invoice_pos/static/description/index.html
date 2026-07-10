@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<title>Display Product Image on Sales, Invoice & POS – Odoo App</title>
+</head>
+<body style="margin:0;padding:0;font-family:'Segoe UI',Arial,sans-serif;color:#1f2937;background:#ffffff;">
+
+<table width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:960px;margin:0 auto;">
+
+  <!-- ═══ HERO BANNER ═══ -->
+  <tr>
+    <td style="padding:0 0 24px 0;">
+      <img src="banner.png" alt="Display Product Image on Sales, Invoice and POS" width="100%" style="display:block;max-width:100%;height:auto;border-radius:8px;"/>
+    </td>
+  </tr>
+
+  <!-- ═══ TAG BADGES ═══ -->
+  <tr>
+    <td align="center" style="padding:8px 16px 28px 16px;">
+      <table cellpadding="0" cellspacing="0" border="0" align="center">
+        <tr>
+          <td bgcolor="#714B67" style="padding:10px 22px;border-radius:4px;">
+            <font color="#FFFFFF" style="font-family:'Segoe UI',Arial,sans-serif;font-size:13px;font-weight:700;">SALES</font>
+          </td>
+          <td width="16" style="font-size:0;line-height:0;">&nbsp;</td>
+          <td bgcolor="#00A09D" style="padding:10px 22px;border-radius:4px;">
+            <font color="#FFFFFF" style="font-family:'Segoe UI',Arial,sans-serif;font-size:13px;font-weight:700;">INVOICING</font>
+          </td>
+          <td width="16" style="font-size:0;line-height:0;">&nbsp;</td>
+          <td bgcolor="#F06050" style="padding:10px 22px;border-radius:4px;">
+            <font color="#FFFFFF" style="font-family:'Segoe UI',Arial,sans-serif;font-size:13px;font-weight:700;">POINT OF SALE</font>
+          </td>
+          <td width="16" style="font-size:0;line-height:0;">&nbsp;</td>
+          <td bgcolor="#875A7B" style="padding:10px 22px;border-radius:4px;">
+            <font color="#FFFFFF" style="font-family:'Segoe UI',Arial,sans-serif;font-size:13px;font-weight:700;">PDF REPORTS</font>
+          </td>
+          <td width="16" style="font-size:0;line-height:0;">&nbsp;</td>
+          <td bgcolor="#F4A24E" style="padding:10px 22px;border-radius:4px;">
+            <font color="#FFFFFF" style="font-family:'Segoe UI',Arial,sans-serif;font-size:13px;font-weight:700;">CONFIGURABLE</font>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+
+  <!-- ═══ COMPATIBILITY HIGHLIGHT ═══ -->
+  <tr>
+    <td style="padding:0 16px 32px 16px;">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#714B67" style="border-radius:8px;">
+        <tr>
+          <td align="center" style="padding:28px 24px;">
+            <font color="#F3D3E5" style="font-family:'Segoe UI',Arial,sans-serif;font-size:12px;letter-spacing:3px;font-weight:700;">COMPATIBLE WITH</font>
+            <br/><br/>
+            <font color="#FFFFFF" style="font-family:'Segoe UI',Arial,sans-serif;font-size:24px;font-weight:700;">
+              Odoo 13 &nbsp;·&nbsp; 14 &nbsp;·&nbsp; 15 &nbsp;·&nbsp; 16 &nbsp;·&nbsp; 17 &nbsp;·&nbsp; 18 &nbsp;·&nbsp; 19
+            </font>
+            <br/><br/>
+            <table cellpadding="0" cellspacing="0" border="0" align="center">
+              <tr>
+                <td bgcolor="#FFFFFF" style="padding:8px 16px;border-radius:3px;"><font color="#714B67" style="font-family:Arial,sans-serif;font-size:12px;font-weight:700;">v13.0</font></td>
+                <td width="12" style="font-size:0;line-height:0;">&nbsp;</td>
+                <td bgcolor="#FFFFFF" style="padding:8px 16px;border-radius:3px;"><font color="#714B67" style="font-family:Arial,sans-serif;font-size:12px;font-weight:700;">v14.0</font></td>
+                <td width="12" style="font-size:0;line-height:0;">&nbsp;</td>
+                <td bgcolor="#FFFFFF" style="padding:8px 16px;border-radius:3px;"><font color="#714B67" style="font-family:Arial,sans-serif;font-size:12px;font-weight:700;">v15.0</font></td>
+                <td width="12" style="font-size:0;line-height:0;">&nbsp;</td>
+                <td bgcolor="#FFFFFF" style="padding:8px 16px;border-radius:3px;"><font color="#714B67" style="font-family:Arial,sans-serif;font-size:12px;font-weight:700;">v16.0</font></td>
+                <td width="12" style="font-size:0;line-height:0;">&nbsp;</td>
+                <td bgcolor="#FFFFFF" style="padding:8px 16px;border-radius:3px;"><font color="#714B67" style="font-family:Arial,sans-serif;font-size:12px;font-weight:700;">v17.0</font></td>
+                <td width="12" style="font-size:0;line-height:0;">&nbsp;</td>
+                <td bgcolor="#FFFFFF" style="padding:8px 16px;border-radius:3px;"><font color="#714B67" style="font-family:Arial,sans-serif;font-size:12px;font-weight:700;">v18.0</font></td>
+                <td width="12" style="font-size:0;line-height:0;">&nbsp;</td>
+                <td bgcolor="#FFFFFF" style="padding:8px 16px;border-radius:3px;"><font color="#714B67" style="font-family:Arial,sans-serif;font-size:12px;font-weight:700;">v19.0</font></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+
+  <!-- ═══ INTRO ═══ -->
+  <tr>
+    <td style="padding:0 16px 32px 16px;">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#F8F4F7" style="border-radius:8px;">
+        <tr>
+          <td style="padding:32px 36px;">
+            <font color="#714B67" style="font-family:'Segoe UI',Arial,sans-serif;font-size:22px;font-weight:700;">
+              Display Product Images on Quotations, Invoices &amp; Point of Sale
+            </font>
+            <br/><br/>
+            <font color="#374151" style="font-family:'Segoe UI',Arial,sans-serif;font-size:15px;line-height:1.7;">
+              Enhance your business documents by automatically rendering each product's image inside
+              <b><font color="#1f2937">Quotations</font></b>, <b><font color="#1f2937">Sale Orders</font></b>, <b><font color="#1f2937">Customer Invoices</font></b>,
+              and <b><font color="#1f2937">Point of Sale (POS)</font></b> receipts and screens. With a single toggle in company settings,
+              every report line shows a clear product photo next to the product name — making documents instantly recognisable to your customers.
+            </font>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+
+  <!-- ═══ KEY FEATURES TITLE ═══ -->
+  <tr>
+    <td align="center" style="padding:16px 16px 8px 16px;">
+      <font color="#1f2937" style="font-family:'Segoe UI',Arial,sans-serif;font-size:26px;font-weight:700;">Key Features</font>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" style="padding:0 16px 24px 16px;">
+      <table cellpadding="0" cellspacing="0" border="0"><tr><td bgcolor="#714B67" width="70" height="4" style="border-radius:2px;font-size:0;line-height:0;">&nbsp;</td></tr></table>
+    </td>
+  </tr>
+
+  <!-- ═══ FEATURES GRID (2 columns via table) ═══ -->
+  <tr>
+    <td style="padding:0 16px 24px 16px;">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <!-- Row 1 -->
+        <tr>
+          <td width="50%" valign="top" style="padding:8px;">
+            <table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="border:1px solid #E5E7EB;border-radius:8px;">
+              <tr><td bgcolor="#714B67" height="4" style="font-size:0;line-height:0;">&nbsp;</td></tr>
+              <tr>
+                <td style="padding:22px 22px 22px 22px;">
+                  <table cellpadding="0" cellspacing="0" border="0"><tr>
+                    <td bgcolor="#714B67" width="40" height="40" align="center" style="border-radius:6px;">
+                      <font color="#FFFFFF" style="font-family:Arial,sans-serif;font-size:16px;font-weight:700;">01</font>
+                    </td>
+                  </tr></table>
+                  <br/>
+                  <font color="#111827" style="font-family:'Segoe UI',Arial,sans-serif;font-size:16px;font-weight:700;">Product Image Column</font>
+                  <br/><br/>
+                  <font color="#4b5563" style="font-family:'Segoe UI',Arial,sans-serif;font-size:14px;">Adds a dedicated, toggleable image column to the sale order line list inside the form view.</font>
+                </td>
+              </tr>
+            </table>
+          </td>
+          <td width="50%" valign="top" style="padding:8px;">
+            <table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="border:1px solid #E5E7EB;border-radius:8px;">
+              <tr><td bgcolor="#00A09D" height="4" style="font-size:0;line-height:0;">&nbsp;</td></tr>
+              <tr>
+                <td style="padding:22px;">
+                  <table cellpadding="0" cellspacing="0" border="0"><tr>
+                    <td bgcolor="#00A09D" width="40" height="40" align="center" style="border-radius:6px;">
+                      <font color="#FFFFFF" style="font-family:Arial,sans-serif;font-size:16px;font-weight:700;">02</font>
+                    </td>
+                  </tr></table>
+                  <br/>
+                  <font color="#111827" style="font-family:'Segoe UI',Arial,sans-serif;font-size:16px;font-weight:700;">Quotation &amp; Order PDF</font>
+                  <br/><br/>
+                  <font color="#4b5563" style="font-family:'Segoe UI',Arial,sans-serif;font-size:14px;">Product images appear automatically in the sale quotation / order PDF report table.</font>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <!-- Row 2 -->
+        <tr>
+          <td width="50%" valign="top" style="padding:8px;">
+            <table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="border:1px solid #E5E7EB;border-radius:8px;">
+              <tr><td bgcolor="#875A7B" height="4" style="font-size:0;line-height:0;">&nbsp;</td></tr>
+              <tr>
+                <td style="padding:22px;">
+                  <table cellpadding="0" cellspacing="0" border="0"><tr>
+                    <td bgcolor="#875A7B" width="40" height="40" align="center" style="border-radius:6px;">
+                      <font color="#FFFFFF" style="font-family:Arial,sans-serif;font-size:16px;font-weight:700;">03</font>
+                    </td>
+                  </tr></table>
+                  <br/>
+                  <font color="#111827" style="font-family:'Segoe UI',Arial,sans-serif;font-size:16px;font-weight:700;">Invoice PDF Report</font>
+                  <br/><br/>
+                  <font color="#4b5563" style="font-family:'Segoe UI',Arial,sans-serif;font-size:14px;">Product images are also rendered inside customer invoice PDF reports.</font>
+                </td>
+              </tr>
+            </table>
+          </td>
+          <td width="50%" valign="top" style="padding:8px;">
+            <table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="border:1px solid #E5E7EB;border-radius:8px;">
+              <tr><td bgcolor="#F06050" height="4" style="font-size:0;line-height:0;">&nbsp;</td></tr>
+              <tr>
+                <td style="padding:22px;">
+                  <table cellpadding="0" cellspacing="0" border="0"><tr>
+                    <td bgcolor="#F06050" width="40" height="40" align="center" style="border-radius:6px;">
+                      <font color="#FFFFFF" style="font-family:Arial,sans-serif;font-size:16px;font-weight:700;">04</font>
+                    </td>
+                  </tr></table>
+                  <br/>
+                  <font color="#111827" style="font-family:'Segoe UI',Arial,sans-serif;font-size:16px;font-weight:700;">Point of Sale Support</font>
+                  <br/><br/>
+                  <font color="#4b5563" style="font-family:'Segoe UI',Arial,sans-serif;font-size:14px;">Product images are displayed on POS receipts and product lines for a richer customer experience.</font>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <!-- Row 3 -->
+        <tr>
+          <td width="50%" valign="top" style="padding:8px;">
+            <table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="border:1px solid #E5E7EB;border-radius:8px;">
+              <tr><td bgcolor="#F4A24E" height="4" style="font-size:0;line-height:0;">&nbsp;</td></tr>
+              <tr>
+                <td style="padding:22px;">
+                  <table cellpadding="0" cellspacing="0" border="0"><tr>
+                    <td bgcolor="#F4A24E" width="40" height="40" align="center" style="border-radius:6px;">
+                      <font color="#FFFFFF" style="font-family:Arial,sans-serif;font-size:16px;font-weight:700;">05</font>
+                    </td>
+                  </tr></table>
+                  <br/>
+                  <font color="#111827" style="font-family:'Segoe UI',Arial,sans-serif;font-size:16px;font-weight:700;">One-Click Setup</font>
+                  <br/><br/>
+                  <font color="#4b5563" style="font-family:'Segoe UI',Arial,sans-serif;font-size:14px;">Enable or disable image display globally from <i>Sales &rarr; Configuration &rarr; Settings</i> or <i>Accounting &rarr; Settings</i>.</font>
+                </td>
+              </tr>
+            </table>
+          </td>
+          <td width="50%" valign="top" style="padding:8px;">
+            <table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="border:1px solid #E5E7EB;border-radius:8px;">
+              <tr><td bgcolor="#2E86AB" height="4" style="font-size:0;line-height:0;">&nbsp;</td></tr>
+              <tr>
+                <td style="padding:22px;">
+                  <table cellpadding="0" cellspacing="0" border="0"><tr>
+                    <td bgcolor="#2E86AB" width="40" height="40" align="center" style="border-radius:6px;">
+                      <font color="#FFFFFF" style="font-family:Arial,sans-serif;font-size:16px;font-weight:700;">06</font>
+                    </td>
+                  </tr></table>
+                  <br/>
+                  <font color="#111827" style="font-family:'Segoe UI',Arial,sans-serif;font-size:16px;font-weight:700;">Custom Image Size</font>
+                  <br/><br/>
+                  <font color="#4b5563" style="font-family:'Segoe UI',Arial,sans-serif;font-size:14px;">Control the exact width and height (in pixels) of product images in reports to match your brand.</font>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <!-- Row 4 -->
+        <tr>
+          <td width="50%" valign="top" style="padding:8px;">
+            <table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="border:1px solid #E5E7EB;border-radius:8px;">
+              <tr><td bgcolor="#5D8AA8" height="4" style="font-size:0;line-height:0;">&nbsp;</td></tr>
+              <tr>
+                <td style="padding:22px;">
+                  <table cellpadding="0" cellspacing="0" border="0"><tr>
+                    <td bgcolor="#5D8AA8" width="40" height="40" align="center" style="border-radius:6px;">
+                      <font color="#FFFFFF" style="font-family:Arial,sans-serif;font-size:16px;font-weight:700;">07</font>
+                    </td>
+                  </tr></table>
+                  <br/>
+                  <font color="#111827" style="font-family:'Segoe UI',Arial,sans-serif;font-size:16px;font-weight:700;">Multi-Company Ready</font>
+                  <br/><br/>
+                  <font color="#4b5563" style="font-family:'Segoe UI',Arial,sans-serif;font-size:14px;">Settings are stored per company, supporting multi-company Odoo environments out of the box.</font>
+                </td>
+              </tr>
+            </table>
+          </td>
+          <td width="50%" valign="top" style="padding:8px;">
+            <table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="border:1px solid #E5E7EB;border-radius:8px;">
+              <tr><td bgcolor="#A24CAB" height="4" style="font-size:0;line-height:0;">&nbsp;</td></tr>
+              <tr>
+                <td style="padding:22px;">
+                  <table cellpadding="0" cellspacing="0" border="0"><tr>
+                    <td bgcolor="#A24CAB" width="40" height="40" align="center" style="border-radius:6px;">
+                      <font color="#FFFFFF" style="font-family:Arial,sans-serif;font-size:16px;font-weight:700;">08</font>
+                    </td>
+                  </tr></table>
+                  <br/>
+                  <font color="#111827" style="font-family:'Segoe UI',Arial,sans-serif;font-size:16px;font-weight:700;">Seamless Integration</font>
+                  <br/><br/>
+                  <font color="#4b5563" style="font-family:'Segoe UI',Arial,sans-serif;font-size:14px;">Works out-of-the-box with the standard Sales, Invoicing and POS modules — no custom themes required.</font>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+
+  <!-- ═══ HOW IT WORKS TITLE ═══ -->
+  <tr>
+    <td align="center" style="padding:24px 16px 8px 16px;">
+      <font color="#1f2937" style="font-family:'Segoe UI',Arial,sans-serif;font-size:26px;font-weight:700;">How It Works</font>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" style="padding:0 16px 8px 16px;">
+      <font color="#6b7280" style="font-family:'Segoe UI',Arial,sans-serif;font-size:15px;">Three simple steps to enrich your documents with product images</font>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" style="padding:8px 16px 24px 16px;">
+      <table cellpadding="0" cellspacing="0" border="0"><tr><td bgcolor="#714B67" width="70" height="4" style="border-radius:2px;font-size:0;line-height:0;">&nbsp;</td></tr></table>
+    </td>
+  </tr>
+
+  <!-- ═══ STEPS ═══ -->
+  <tr>
+    <td style="padding:0 16px 32px 16px;">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr><td style="padding:0 0 12px 0;">
+          <table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="border:1px solid #E5E7EB;border-radius:8px;">
+            <tr>
+              <td width="70" bgcolor="#714B67" align="center" valign="middle" style="border-radius:8px 0 0 8px;">
+                <font color="#FFFFFF" style="font-family:Arial,sans-serif;font-size:26px;font-weight:700;">1</font>
+              </td>
+              <td style="padding:18px 24px;">
+                <font color="#111827" style="font-family:'Segoe UI',Arial,sans-serif;font-size:16px;font-weight:700;">Install the Module</font>
+                <br/><br/>
+                <font color="#4b5563" style="font-family:'Segoe UI',Arial,sans-serif;font-size:14px;">Upload and install from the Apps menu on Odoo 13 through 19. No configuration wizard required.</font>
+              </td>
+            </tr>
+          </table>
+        </td></tr>
+        <tr><td style="padding:0 0 12px 0;">
+          <table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="border:1px solid #E5E7EB;border-radius:8px;">
+            <tr>
+              <td width="70" bgcolor="#714B67" align="center" valign="middle" style="border-radius:8px 0 0 8px;">
+                <font color="#FFFFFF" style="font-family:Arial,sans-serif;font-size:26px;font-weight:700;">2</font>
+              </td>
+              <td style="padding:18px 24px;">
+                <font color="#111827" style="font-family:'Segoe UI',Arial,sans-serif;font-size:16px;font-weight:700;">Enable in Settings</font>
+                <br/><br/>
+                <font color="#4b5563" style="font-family:'Segoe UI',Arial,sans-serif;font-size:14px;">Go to <b><font color="#714B67">Sales &rarr; Configuration &rarr; Settings &rarr; Product Image in Reports</font></b> and toggle on <i>"Show Product Image"</i>. Optionally adjust the image width and height.</font>
+              </td>
+            </tr>
+          </table>
+        </td></tr>
+        <tr><td>
+          <table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="border:1px solid #E5E7EB;border-radius:8px;">
+            <tr>
+              <td width="70" bgcolor="#714B67" align="center" valign="middle" style="border-radius:8px 0 0 8px;">
+                <font color="#FFFFFF" style="font-family:Arial,sans-serif;font-size:26px;font-weight:700;">3</font>
+              </td>
+              <td style="padding:18px 24px;">
+                <font color="#111827" style="font-family:'Segoe UI',Arial,sans-serif;font-size:16px;font-weight:700;">Print, Preview or Sell</font>
+                <br/><br/>
+                <font color="#4b5563" style="font-family:'Segoe UI',Arial,sans-serif;font-size:14px;">Open any Quotation, Invoice or POS session — product images appear automatically in the reports and POS interface.</font>
+              </td>
+            </tr>
+          </table>
+        </td></tr>
+      </table>
+    </td>
+  </tr>
+
+  <!-- ═══ VERSION COMPATIBILITY TITLE ═══ -->
+  <tr>
+    <td align="center" style="padding:16px 16px 8px 16px;">
+      <font color="#1f2937" style="font-family:'Segoe UI',Arial,sans-serif;font-size:26px;font-weight:700;">Version Compatibility</font>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" style="padding:0 16px 8px 16px;">
+      <font color="#6b7280" style="font-family:'Segoe UI',Arial,sans-serif;font-size:15px;">Tested and supported across all major Odoo releases from v13 to v19</font>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" style="padding:8px 16px 24px 16px;">
+      <table cellpadding="0" cellspacing="0" border="0"><tr><td bgcolor="#714B67" width="70" height="4" style="border-radius:2px;font-size:0;line-height:0;">&nbsp;</td></tr></table>
+    </td>
+  </tr>
+
+  <!-- ═══ COMPATIBILITY TABLE ═══ -->
+  <tr>
+    <td style="padding:0 16px 32px 16px;">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="border:1px solid #E5E7EB;border-radius:8px;">
+        <tr>
+          <td bgcolor="#714B67" style="padding:14px 20px;border-radius:8px 0 0 0;">
+            <font color="#FFFFFF" style="font-family:'Segoe UI',Arial,sans-serif;font-size:14px;font-weight:700;">Odoo Version</font>
+          </td>
+          <td bgcolor="#714B67" align="center" style="padding:14px 20px;">
+            <font color="#FFFFFF" style="font-family:'Segoe UI',Arial,sans-serif;font-size:14px;font-weight:700;">Status</font>
+          </td>
+          <td bgcolor="#714B67" align="center" style="padding:14px 20px;">
+            <font color="#FFFFFF" style="font-family:'Segoe UI',Arial,sans-serif;font-size:14px;font-weight:700;">Sales</font>
+          </td>
+          <td bgcolor="#714B67" align="center" style="padding:14px 20px;">
+            <font color="#FFFFFF" style="font-family:'Segoe UI',Arial,sans-serif;font-size:14px;font-weight:700;">Invoicing</font>
+          </td>
+          <td bgcolor="#714B67" align="center" style="padding:14px 20px;border-radius:0 8px 0 0;">
+            <font color="#FFFFFF" style="font-family:'Segoe UI',Arial,sans-serif;font-size:14px;font-weight:700;">POS</font>
+          </td>
+        </tr>
+        <tr bgcolor="#FFFFFF">
+          <td style="padding:14px 20px;border-top:1px solid #F1F5F9;"><font color="#1f2937" style="font-family:'Segoe UI',Arial,sans-serif;font-size:14px;font-weight:700;">Odoo 13.0</font></td>
+          <td align="center" style="padding:14px 20px;border-top:1px solid #F1F5F9;"><font color="#00A09D" style="font-family:'Segoe UI',Arial,sans-serif;font-size:14px;font-weight:700;">Supported</font></td>
+          <td align="center" style="padding:14px 20px;border-top:1px solid #F1F5F9;"><font color="#00A09D" style="font-family:Arial,sans-serif;font-size:18px;font-weight:700;">&#10003;</font></td>
+          <td align="center" style="padding:14px 20px;border-top:1px solid #F1F5F9;"><font color="#00A09D" style="font-family:Arial,sans-serif;font-size:18px;font-weight:700;">&#10003;</font></td>
+          <td align="center" style="padding:14px 20px;border-top:1px solid #F1F5F9;"><font color="#00A09D" style="font-family:Arial,sans-serif;font-size:18px;font-weight:700;">&#10003;</font></td>
+        </tr>
+        <tr bgcolor="#F8F4F7">
+          <td style="padding:14px 20px;"><font color="#1f2937" style="font-family:'Segoe UI',Arial,sans-serif;font-size:14px;font-weight:700;">Odoo 14.0</font></td>
+          <td align="center" style="padding:14px 20px;"><font color="#00A09D" style="font-family:'Segoe UI',Arial,sans-serif;font-size:14px;font-weight:700;">Supported</font></td>
+          <td align="center" style="padding:14px 20px;"><font color="#00A09D" style="font-family:Arial,sans-serif;font-size:18px;font-weight:700;">&#10003;</font></td>
+          <td align="center" style="padding:14px 20px;"><font color="#00A09D" style="font-family:Arial,sans-serif;font-size:18px;font-weight:700;">&#10003;</font></td>
+          <td align="center" style="padding:14px 20px;"><font color="#00A09D" style="font-family:Arial,sans-serif;font-size:18px;font-weight:700;">&#10003;</font></td>
+        </tr>
+        <tr bgcolor="#FFFFFF">
+          <td style="padding:14px 20px;"><font color="#1f2937" style="font-family:'Segoe UI',Arial,sans-serif;font-size:14px;font-weight:700;">Odoo 15.0</font></td>
+          <td align="center" style="padding:14px 20px;"><font color="#00A09D" style="font-family:'Segoe UI',Arial,sans-serif;font-size:14px;font-weight:700;">Supported</font></td>
+          <td align="center" style="padding:14px 20px;"><font color="#00A09D" style="font-family:Arial,sans-serif;font-size:18px;font-weight:700;">&#10003;</font></td>
+          <td align="center" style="padding:14px 20px;"><font color="#00A09D" style="font-family:Arial,sans-serif;font-size:18px;font-weight:700;">&#10003;</font></td>
+          <td align="center" style="padding:14px 20px;"><font color="#00A09D" style="font-family:Arial,sans-serif;font-size:18px;font-weight:700;">&#10003;</font></td>
+        </tr>
+        <tr bgcolor="#F8F4F7">
+          <td style="padding:14px 20px;"><font color="#1f2937" style="font-family:'Segoe UI',Arial,sans-serif;font-size:14px;font-weight:700;">Odoo 16.0</font></td>
+          <td align="center" style="padding:14px 20px;"><font color="#00A09D" style="font-family:'Segoe UI',Arial,sans-serif;font-size:14px;font-weight:700;">Supported</font></td>
+          <td align="center" style="padding:14px 20px;"><font color="#00A09D" style="font-family:Arial,sans-serif;font-size:18px;font-weight:700;">&#10003;</font></td>
+          <td align="center" style="padding:14px 20px;"><font color="#00A09D" style="font-family:Arial,sans-serif;font-size:18px;font-weight:700;">&#10003;</font></td>
+          <td align="center" style="padding:14px 20px;"><font color="#00A09D" style="font-family:Arial,sans-serif;font-size:18px;font-weight:700;">&#10003;</font></td>
+        </tr>
+        <tr bgcolor="#FFFFFF">
+          <td style="padding:14px 20px;"><font color="#1f2937" style="font-family:'Segoe UI',Arial,sans-serif;font-size:14px;font-weight:700;">Odoo 17.0</font></td>
+          <td align="center" style="padding:14px 20px;"><font color="#00A09D" style="font-family:'Segoe UI',Arial,sans-serif;font-size:14px;font-weight:700;">Supported</font></td>
+          <td align="center" style="padding:14px 20px;"><font color="#00A09D" style="font-family:Arial,sans-serif;font-size:18px;font-weight:700;">&#10003;</font></td>
+          <td align="center" style="padding:14px 20px;"><font color="#00A09D" style="font-family:Arial,sans-serif;font-size:18px;font-weight:700;">&#10003;</font></td>
+          <td align="center" style="padding:14px 20px;"><font color="#00A09D" style="font-family:Arial,sans-serif;font-size:18px;font-weight:700;">&#10003;</font></td>
+        </tr>
+        <tr bgcolor="#F8F4F7">
+          <td style="padding:14px 20px;"><font color="#1f2937" style="font-family:'Segoe UI',Arial,sans-serif;font-size:14px;font-weight:700;">Odoo 18.0</font></td>
+          <td align="center" style="padding:14px 20px;"><font color="#00A09D" style="font-family:'Segoe UI',Arial,sans-serif;font-size:14px;font-weight:700;">Supported</font></td>
+          <td align="center" style="padding:14px 20px;"><font color="#00A09D" style="font-family:Arial,sans-serif;font-size:18px;font-weight:700;">&#10003;</font></td>
+          <td align="center" style="padding:14px 20px;"><font color="#00A09D" style="font-family:Arial,sans-serif;font-size:18px;font-weight:700;">&#10003;</font></td>
+          <td align="center" style="padding:14px 20px;"><font color="#00A09D" style="font-family:Arial,sans-serif;font-size:18px;font-weight:700;">&#10003;</font></td>
+        </tr>
+        <tr bgcolor="#FFFFFF">
+          <td style="padding:14px 20px;border-radius:0 0 0 8px;"><font color="#1f2937" style="font-family:'Segoe UI',Arial,sans-serif;font-size:14px;font-weight:700;">Odoo 19.0</font></td>
+          <td align="center" style="padding:14px 20px;"><font color="#00A09D" style="font-family:'Segoe UI',Arial,sans-serif;font-size:14px;font-weight:700;">Supported</font></td>
+          <td align="center" style="padding:14px 20px;"><font color="#00A09D" style="font-family:Arial,sans-serif;font-size:18px;font-weight:700;">&#10003;</font></td>
+          <td align="center" style="padding:14px 20px;"><font color="#00A09D" style="font-family:Arial,sans-serif;font-size:18px;font-weight:700;">&#10003;</font></td>
+          <td align="center" style="padding:14px 20px;border-radius:0 0 8px 0;"><font color="#00A09D" style="font-family:Arial,sans-serif;font-size:18px;font-weight:700;">&#10003;</font></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+
+  <!-- ═══ DEVELOPER SECTION ═══ -->
+  <tr>
+    <td style="padding:0 16px 24px 16px;">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#714B67" style="border-radius:8px;">
+        <tr>
+          <td style="padding:32px 36px;">
+            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+              <tr>
+                <td width="110" valign="top">
+                  <img src="developer-logo.png" alt="WAIKO Developer Logo" width="90" height="90" style="display:block;border-radius:50%;border:3px solid #FFFFFF;background:#FFFFFF;"/>
+                </td>
+                <td valign="top" style="padding-left:12px;">
+                  <font color="#F3D3E5" style="font-family:'Segoe UI',Arial,sans-serif;font-size:11px;letter-spacing:2px;font-weight:700;">DEVELOPED BY</font>
+                  <br/>
+                  <font color="#FFFFFF" style="font-family:'Segoe UI',Arial,sans-serif;font-size:24px;font-weight:700;">Eng. Mohamed Wally</font>
+                  <br/>
+                  <font color="#E6D0DD" style="font-family:'Segoe UI',Arial,sans-serif;font-size:14px;">Professional Odoo Developer &amp; Web App Engineer</font>
+                  <br/><br/>
+                  <font color="#FFFFFF" style="font-family:'Segoe UI',Arial,sans-serif;font-size:14px;">Website: </font>
+                  <a href="https://mohamed-wally.com" target="_blank" style="text-decoration:none;">
+                    <font color="#FFD700" style="font-family:'Segoe UI',Arial,sans-serif;font-size:14px;font-weight:700;">mohamed-wally.com</font>
+                  </a>
+                  <br/><br/>
+                  <font color="#E6D0DD" style="font-family:'Segoe UI',Arial,sans-serif;font-size:13px;">Need a custom Odoo module? Feel free to reach out for professional Odoo development services covering Odoo 13 through Odoo 19.</font>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+
+  <!-- ═══ FOOTER ═══ -->
+  <tr>
+    <td align="center" style="padding:16px 16px 40px 16px;border-top:1px solid #E5E7EB;">
+      <font color="#6b7280" style="font-family:'Segoe UI',Arial,sans-serif;font-size:13px;">
+        &copy; 2024 Eng. Mohamed Wally &nbsp;·&nbsp; Licensed under
+        <b><font color="#714B67">LGPL-3</font></b>
+        &nbsp;·&nbsp;
+        <a href="https://apps.odoo.com" target="_blank" style="text-decoration:none;">
+          <font color="#714B67" style="font-weight:700;">Odoo Apps Store</font>
+        </a>
+      </font>
+    </td>
+  </tr>
+
+</table>
+
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon='{"version":"2024.11.0","token":"75124c326cb447fe934cde04713ae013","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
