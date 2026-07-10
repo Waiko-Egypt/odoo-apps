@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Extend Sale Order Report to add Warranty Column -->
+    <template id="report_saleorder_document_warranty"
+              inherit_id="sale.report_saleorder_document">
+
+        <xpath expr="//th[@name='th_quantity']" position="before">
+            <th name="th_warranty" class="text-left"><span>Warranty</span></th>
+        </xpath>
+
+        <xpath expr="//td[@name='td_quantity']" position="before">
+            <td name="td_warranty" style="font-size: 0.9em; vertical-align: middle;">
+                <span t-if="line.warranty_description" t-field="line.warranty_description"/>
+            </td>
+        </xpath>
+
+    </template>
+
+</odoo>
