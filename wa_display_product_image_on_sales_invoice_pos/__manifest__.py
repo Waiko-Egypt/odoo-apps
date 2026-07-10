@@ -1,0 +1,36 @@
+{
+    "name": "Display Product Image on Sales, Invoice & POS",
+    "version": "19.0.1.0.0",
+    "category": "Sales",
+    "summary": "Show product image in sale order lines, quotation, invoice and POS reports",
+    "description": """
+Display Product Image on Sales, Invoice & POS – Odoo 19
+=======================================================
+
+Display product images in sale order lines, quotation reports, and invoice reports.
+
+Features:
+---------
+* Product image column in sale order line list view (optional – toggleable per user)
+* Product image in sale quotation / order PDF reports
+* Product image in customer invoice PDF reports
+* Company-level settings to enable/disable and control image dimensions
+* Supports Community and Enterprise editions
+
+Developer: Eng. Mohamed Wally
+Website  : https://mohamed-wally.com
+    """,
+    "author": "Eng. Mohamed Wally",
+    "website": "https://mohamed-wally.com",
+    "depends": ["sale", "account"],
+    "data": [
+        "views/res_config_settings_views.xml",
+        "views/sale_order_views.xml",
+        "views/report_templates.xml",
+    ],
+    "images": ["static/description/banner.png"],
+    "installable": True,
+    "application": False,
+    "auto_install": False,
+    "license": "LGPL-3",
+}

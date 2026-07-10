@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!--
+        Odoo 19 — Same structure as v17/v18.
+        invisible="..." Python-expression syntax.
+        <div class="app_settings_block" data-key="..."> blocks.
+    -->
+
+    <!-- ── Sale Settings ── -->
+    <record id="res_config_settings_view_form_sale" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.product.image.reports.sale</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="sale.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@data-key='sale']" position="after">
+                <div class="app_settings_block"
+                     data-string="Product Image in Reports"
+                     data-key="product_image_reports"
+                     string="Product Image in Reports">
+                    <block title="Product Image in Reports" name="product_image_reports_container">
+                        <setting string="Show Product Image"
+                                 help="Display the product image in quotation and invoice report lines.">
+                            <field name="show_product_image_in_reports"/>
+                            <div class="content-group" invisible="not show_product_image_in_reports">
+                                <div class="row mt8">
+                                    <label for="product_image_width" class="col-lg-4 o_light_label"/>
+                                    <field name="product_image_width" class="oe_inline"/>
+                                    <span class="col-form-label">px width</span>
+                                </div>
+                                <div class="row mt8">
+                                    <label for="product_image_height" class="col-lg-4 o_light_label"/>
+                                    <field name="product_image_height" class="oe_inline"/>
+                                    <span class="col-form-label">px height</span>
+                                </div>
+                            </div>
+                        </setting>
+                    </block>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- ── Account Settings ── -->
+    <record id="res_config_settings_view_form_account" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.product.image.reports.account</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="account.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@data-key='account']" position="after">
+                <div class="app_settings_block"
+                     data-string="Product Image in Reports"
+                     data-key="product_image_reports_account"
+                     string="Product Image in Reports">
+                    <block title="Product Image in Reports" name="product_image_reports_account_container">
+                        <setting string="Show Product Image"
+                                 help="Display the product image in invoice and quotation report lines.">
+                            <field name="show_product_image_in_reports"/>
+                            <div class="content-group" invisible="not show_product_image_in_reports">
+                                <div class="row mt8">
+                                    <label for="product_image_width" class="col-lg-4 o_light_label"/>
+                                    <field name="product_image_width" class="oe_inline"/>
+                                    <span class="col-form-label">px width</span>
+                                </div>
+                                <div class="row mt8">
+                                    <label for="product_image_height" class="col-lg-4 o_light_label"/>
+                                    <field name="product_image_height" class="oe_inline"/>
+                                    <span class="col-form-label">px height</span>
+                                </div>
+                            </div>
+                        </setting>
+                    </block>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
