@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Product image in quotation / sale-order lines. -->
+    <record id="view_order_form_inherit_product_image" model="ir.ui.view">
+        <field name="name">sale.order.form.inherit.product.image</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <!-- Explicitly reactivate installations upgraded from 17.0.1.0.1. -->
+        <field name="active" eval="True"/>
+        <field name="arch" type="xml">
+            <xpath expr="(//field[@name='order_line']/tree//field[@name='product_id'])[1]" position="after">
+                <field name="product_image" widget="image"
+                       options="{'size': [64, 64], 'preview_image': 'product_image'}"
+                       string="Image"
+                       readonly="1"
+                       width="70px"
+                       optional="show"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Product image in customer/vendor invoice lines. -->
+    <record id="view_move_form_inherit_product_image" model="ir.ui.view">
+        <field name="name">account.move.form.inherit.product.image</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="(//field[@name='invoice_line_ids']/tree//field[@name='product_id'])[1]" position="after">
+                <field name="product_image" widget="image"
+                       options="{'size': [64, 64], 'preview_image': 'product_image'}"
+                       string="Image"
+                       readonly="1"
+                       width="70px"
+                       optional="show"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
