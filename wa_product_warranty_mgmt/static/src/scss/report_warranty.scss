@@ -1,0 +1,13 @@
+/* Product Warranty - Report Styles */
+td[name="td_warranty"] {
+    font-size: 0.85em;
+    vertical-align: middle;
+    small {
+        color: #666;
+        display: block;
+        margin-top: 2px;
+    }
+}
+th[name="th_warranty"] {
+    white-space: nowrap;
+}
