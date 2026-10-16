@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_config_settings_view_form_product_image_reports" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.product.image.reports</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('settings')]" position="inside">
+                <div class="app_settings_block"
+                     data-string="Product Images"
+                     string="Product Images"
+                     data-key="product_image_reports">
+                    <h2>Product Images in Reports</h2>
+                    <div class="row mt16 o_settings_container"
+                         id="product_image_reports_settings">
+                        <div class="col-12 col-lg-6 o_setting_box">
+                            <div class="o_setting_left_pane">
+                                <field name="show_product_image_in_reports"/>
+                            </div>
+                            <div class="o_setting_right_pane">
+                                <label for="show_product_image_in_reports"/>
+                                <div class="text-muted">
+                                    Display the product image in quotation, sale order, and invoice reports.
+                                </div>
+                                <div class="content-group"
+                                     attrs="{'invisible': [('show_product_image_in_reports', '=', False)]}">
+                                    <div class="row mt16">
+                                        <label for="product_image_width"
+                                               class="col-lg-4 o_light_label"/>
+                                        <field name="product_image_width" class="oe_inline"/>
+                                        <span class="col-form-label ms-2">px width</span>
+                                    </div>
+                                    <div class="row mt8">
+                                        <label for="product_image_height"
+                                               class="col-lg-4 o_light_label"/>
+                                        <field name="product_image_height" class="oe_inline"/>
+                                        <span class="col-form-label ms-2">px height</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>
