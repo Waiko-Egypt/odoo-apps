@@ -8,7 +8,7 @@
             <xpath expr="//form" position="inside">
                 <app data-string="Product Images"
                      string="Product Images"
-                     name="product_image_reports">
+                     name="wa_display_product_image_on_sales_invoice_pos">
                     <block title="Product Images in Reports"
                            name="product_image_reports_settings">
                         <setting id="show_product_image_in_reports_setting"
