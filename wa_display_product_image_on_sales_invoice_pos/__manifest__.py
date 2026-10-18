@@ -29,7 +29,7 @@ Website  : https://mohamed-wally.com
     ],
     "images": ["static/description/banner.png"],
     "installable": True,
-    "application": False,
+    "application": True,
     "auto_install": False,
     "license": "LGPL-3",
 }

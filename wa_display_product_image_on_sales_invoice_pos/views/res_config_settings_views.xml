@@ -9,7 +9,7 @@
                 <div class="app_settings_block"
                      data-string="Product Images"
                      string="Product Images"
-                     data-key="product_image_reports">
+                     data-key="wa_display_product_image_on_sales_invoice_pos">
                     <h2>Product Images in Reports</h2>
                     <div class="row mt16 o_settings_container"
                          id="product_image_reports_settings">
