@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Odoo 18 — Stamp & Signature settings menu -->
+<odoo>
+
+    <!-- ── Standalone action that opens the wizard ──────────────────────── -->
+    <record id="action_stamp_settings_menu" model="ir.actions.act_window">
+        <field name="name">Stamp &amp; Signature Settings</field>
+        <field name="res_model">stamp.signature.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <!-- ── Settings top-level menu entry ────────────────────────────────── -->
+    <menuitem id="menu_stamp_settings_root"
+              name="Stamp &amp; Signature"
+              parent="base.menu_administration"
+              action="action_stamp_settings_menu"
+              sequence="98"
+              groups="company_stamp_and_signature.group_stamp_manager"/>
+
+</odoo>
