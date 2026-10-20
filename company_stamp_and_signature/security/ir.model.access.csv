@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_stamp_wizard_manager,stamp.signature.wizard.manager,model_stamp_signature_wizard,company_stamp_and_signature.group_stamp_manager,1,1,1,1
